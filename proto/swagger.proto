@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package tireproto;
+
+option go_package = "tireproto";
+option java_multiple_files = true;
+option java_outer_classname = "tireProto";
+option java_package = "com.golang-tire.proto";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FileOptions {
+    string contain_swagger_header = 52001;
+    string swagger_service_title = 52002;
+    string swagger_service_description = 52003;
+}

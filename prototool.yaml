@@ -1,0 +1,15 @@
+protoc:
+  # The Protobuf version to use from https://github.com/protocolbuffers/protobuf/releases.
+  # You probably want to set this to make your builds completely reproducible.
+  version: 3.11.0
+
+generate:
+  # Options that will apply to all plugins of type go, gogo, gogrpc, gogogrpc.
+  go_options:
+    # The base import path. This should be the go path of the prototool.yaml file.
+    # This is required if you have any go plugins.
+    import_path: github.com/golang-tire/protobuf
+  plugins:
+    - name: go
+      type: go
+      output: .

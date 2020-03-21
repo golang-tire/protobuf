@@ -1,0 +1,9 @@
+.glide
+.idea
+.tmp
+.vscode
+bazel-*
+prototool.iml
+release
+vendor
+dist

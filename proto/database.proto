@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package tireproto;
+
+option go_package = "tireproto";
+option java_multiple_files = true;
+option java_outer_classname = "tireProto";
+option java_package = "com.golang-tire.proto";
+
+import "google/protobuf/descriptor.proto";
+import "google/protobuf/any.proto";
+
+
+extend google.protobuf.MessageOptions {
+  bool is_table = 53001;
+  string table_name = 53002;
+  bool junction_table = 53004;
+  repeated string unique_togther = 53005;
+  repeated string get_by_fields = 53006;
+  repeated string update_by_fields = 53007;
+  repeated string delete_by_fields = 53008;
+}
+
+enum OnDelete{
+  CASCADE = 0;
+  SET_NULL = 1;
+  SET_DEFAULT = 2;
+  NOTING = 3;
+}
+
+extend google.protobuf.FieldOptions {
+  bool nullable = 54001;
+  string dbtags = 54002;
+  string jsontags = 54003;
+  string cutometype = 54004;
+  string customname = 54005;
+  google.protobuf.Any defaultvalue = 54006;
+  string forigen_table = 54007;
+  string forgigen_field = 54008;
+  OnDelete forgigen_on_delete = 54009;
+  bool unique = 54010;
+  bool auto = 54011;
+}
