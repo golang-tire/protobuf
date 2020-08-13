@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package tireproto;
+package protobuf;
 
-option go_package = "tireproto";
+option go_package = "github.com/golang-tire/protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "tireProto";
 option java_package = "com.golang-tire.proto";
@@ -15,7 +15,7 @@ extend google.protobuf.MessageOptions {
   bool is_table = 53001;
   string table_name = 53002;
   bool junction_table = 53004;
-  repeated string unique_togther = 53005;
+  repeated string unique_together = 53005;
   repeated string get_by_fields = 53006;
   repeated string update_by_fields = 53007;
   repeated string delete_by_fields = 53008;
@@ -30,14 +30,14 @@ enum OnDelete{
 
 extend google.protobuf.FieldOptions {
   bool nullable = 54001;
-  string dbtags = 54002;
-  string jsontags = 54003;
-  string cutometype = 54004;
-  string customname = 54005;
-  google.protobuf.Any defaultvalue = 54006;
-  string forigen_table = 54007;
-  string forgigen_field = 54008;
-  OnDelete forgigen_on_delete = 54009;
+  string db_tags = 54002;
+  string json_tags = 54003;
+  string custom_type = 54004;
+  string custom_name = 54005;
+  google.protobuf.Any default_value = 54006;
+  string foreign_table = 54007;
+  string foreign_field = 54008;
+  OnDelete foreign_on_delete = 54009;
   bool unique = 54010;
   bool auto = 54011;
 }

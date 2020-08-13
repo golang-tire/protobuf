@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package tireproto;
+package protobuf;
 
-option go_package = "tireproto";
+option go_package = "github.com/golang-tire/protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "tireProto";
 option java_package = "com.golang-tire.proto";
